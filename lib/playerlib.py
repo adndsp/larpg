@@ -142,7 +142,7 @@ def time_delay_attack(attacker, target, attackStats):
 					print 'Critical Hit!'
 				else:
 					totalDMG = baseDMG + attacker.level
-			target.health = target.health - totalDMG
+			target.health -= totalDMG
 			print '%s %s %s for %s points of damage!\n%s HP: %s' % \
 				  (attacker.name, attackStats[-1], target.name, totalDMG, \
 				  target.name, target.health)
