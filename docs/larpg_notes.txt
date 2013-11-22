@@ -1,0 +1,124 @@
+LaRPG: Sunny Bluebird Happy Pill Adventures
+
+  LaRPG is an action RPG where the player controls a schizophrenic whose
+activities are split between mundane day-to-day tasks (such as food shopping),
+and wild role-playing forays fueled by a flagrant disregard for medicinal
+containment.
+
+  The core mechanic involves adventuring in a fantasy realm, gaining experience
+and equipment in a quest to become more powerful and one day lay siege to the
+stronghold of power that keeps you subjugated.
+
+  However, in order to keep your own mind sorted out, you're going to need some
+help. Your court-appointed psychiatrist is there for you, along with the Sunny
+Bluebird Happy Pill company.
+
+  When your day's journey as a great wizard or warrior leaves you satisfied,
+simply take your medicine. In order to keep the memory of what you did
+(experience gained) and what you found (equipment looted) fresh in your mixed-up
+mind, you'll want to see the shrink and, when necessary, make sure that you have
+a healthy supply of Sunny Bluebird Happy Pills or you may never make it back
+next time...
+
+  If your battles don't go the way you hoped, you'll wake up with no memory of
+what transpired (your character's save state data will be reverted to the last
+psychiatrist visit).
+
+Planned starting classes are:
+
+			  ::Ability Notes::
+        Disciplines Timer: 30 minutes
+Offensive/Defensive Timer: 5 minutes
+
+	MELEE:
+		Warrior:
+			Highest defense and health.
+			Moderate melee damage.
+			Abilities:
+				(offensive)  Strike True: bypass defense (10s)
+				(defensive)  Steadfast: avoid/mitig boost (30s)
+				(discipline) Unbreakable: received damage reduced by 90% (30s)
+
+		Rogue:
+			Medium defense and health.
+			Good avoidance, low mitigation.
+			Highest accuracy and critical.
+			Abilities:
+				(offensive)  Puncture: high damage main-hand strike (0s)
+				(defensive)  Thieve's Agility: avoid/mitig boost (15s)
+				(discipline) Assassinate: massive atk/crit boost (0s)
+
+		Monk:
+			Mid-high health.
+			High avoidance, low mitigation.
+			High critical.
+			Highest attack.
+			Abilities:
+				(offensive)  Dragon Kick: high damage melee strike (0s)
+				(defensive)  Death Stasis: reset agro status (0s)
+				(discipline) Inner Focus: attack/critical boost (30s)
+
+	HYBRID:
+		Ranger:
+			Average defense and health.
+			Mid-high accuracy, attack, critical.
+			Below-average mana pool.
+			Abilities:
+				(discipline) Eye of the Outrider: crit/haste boost (30s)
+			Spells:
+				(offensive)  Skyshatter: medium lightning DD (0s)
+				(defensive)  Sylvan Blessing: medium hp regen (30s)
+
+		Paladin:
+			Mid-high defense.
+			Average offense.
+			Abilities:
+				(discipline) Knight's Blessing: high hp regen/acc/atk (20s)
+			Spells:
+				(offensive)  Force Stagger: prevent enemy from attacking (20s)
+				(defensive)  Honorgaurd: mitig/attack boost (30s)
+
+		Shadow Knight:
+			Mid-high defense.
+			Above-average offense.
+			Abilities:
+				(discipline) Vampiric Annihilation: melee dmg = heal (10s)
+			Spells:
+				(offensive)  Leech: medium DD, self-heal (0s)
+				(defensive)  Rigor Mortis: increased mitig (20s)
+
+	CASTER:
+		Cleric:
+			Mid-high defense and health.
+			Low offense.
+			High mana.
+			Spells:
+				(offensive)  Righteous Judgement: high DD, stun (3s)
+				(offensive)  Cleansing Flame: fire DoT, cold debuff (30s)
+				(offensive)  Wave of Redemption: cold DD, fire debuff (10s)
+				(offensive)  Final Rites: destroy undead (0s)
+				(defensive)  Divinity: 100% heal (0s)
+				(defensive)  Light of the Gods: 100% HoT (1m)
+
+		Wizard:
+			Low defense and offense.
+			Highest available mana.
+			Spells:
+				(offensive)  Comet Strike: high DD, fire debuff (10s)
+				(offensive)  Solar Winds: high DoT, cold debuff (30s)
+				(offensive)  Essence Sunder: high DD, stun (5s)
+				(offensive)  Iron Maelstrom: high DD, lower avoidance (30s)
+				(defensive)  Dust Vortex: reduce enemy acc 75% (30s)
+				(defensive)  Transcendence: reset agro, move to safe area (0s)
+
+		Necromancer:
+			Low defense.
+			Low-mid offense.
+			Highest available mana.
+			Spells:
+				(offensive)  Soul Rend: DoT, self heal (1m)
+				(offensive)  Miasma: DoT, reduce avoid (1m)
+				(offensive)  Grave Rot: DoT, reduce mitig (1m)
+				(offensive)  Spectral Beckoning: DoT, reduce acc (1m)
+				(defensive)  Hand of the Dead: increase atk dly (1m)
+				(defensive)  Reaper's Embrace: reduce atk if hit (1m)
