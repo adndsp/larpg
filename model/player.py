@@ -1,4 +1,5 @@
 from model.items_weapons import WEAPONS
+from time import time
 
 __ALL__ = ('EQUIPMENT_SLOTS', 'INVENTORY_SLOTS', 'DEFAULT_PLAYER_STATS',
            'CLASS_STATS_MODIFIER_DICT')
@@ -45,8 +46,11 @@ DEFAULT_PLAYER_STATS = {
 	'critical': 0,
 	'haste': 0,
 	'primStats': (),
+	'primDelay': time(),
 	'secStats': (),
+	'secDelay': time(),
 	'rngStats': (),
+	'rngDelay': time(),
 	'proc1': '',
 	'proc2': '',
 	'proc3': '',

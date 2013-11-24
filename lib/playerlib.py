@@ -124,36 +124,47 @@ class Player:
 		for i in xrange(level - 1):
 			self.levelUp()
 
-def time_delay_attack(attacker, target, attackStats):
+def execute_attack(attacker, target, attackStats):
+	hitChance = (((attacker.accuracy / 10) - (10 * random())) * \
+				((1000 - target.avoidance) / 1000) + (10 * random())) - \
+				(attacker.accuracy / 10) * \
+				((1000 - target.avoidance) / 1000)
 
-	def execute_attack(attacker, target, attackStats):
-		hitChance = (((attacker.accuracy / 10) - (10 * random())) * \
-					((1000 - target.avoidance) / 1000) + (10 * random())) - \
-					(attacker.accuracy / 10) * \
-					((1000 - target.avoidance) / 1000)
-		if hitChance > 1:
-			if attacker.attack < target.mitigation:
-				totalDMG = attacker.level
-			else:
-				baseDMG = int(((attackStats[0] * ((1000 - target.mitigation) /  \
-						  (100 + (15 * random()))))) * 0.1)
-				if (attacker.critical / 10) > randrange(99):
-					totalDMG = int(baseDMG * 1.75) + attacker.level
-					print 'Critical Hit!'
-				else:
-					totalDMG = baseDMG + attacker.level
-			target.health -= totalDMG
-			print '%s %s %s for %s points of damage!\n%s HP: %s' % \
-				  (attacker.name, attackStats[-1], target.name, totalDMG, \
-				  target.name, target.health)
+	if hitChance > 1:
+		if attacker.attack < target.mitigation:
+			totalDMG = attacker.level
 		else:
-			print 'Missed'
+			baseDMG = int(((attackStats[0] * ((1000 - target.mitigation) /  \
+					  (100 + (15 * random()))))) * 0.1)
+			if (attacker.critical / 10) > randrange(99):
+				totalDMG = int(baseDMG * 1.75) + attacker.level
+				print 'Critical Hit!'
+			else:
+				totalDMG = baseDMG + attacker.level
+		target.health -= totalDMG
+#		print '%s %s %s for %s points of damage!\n%s HP: %s' % \
+#			  (attacker.name, attackStats[-1], target.name, totalDMG, \
+#			  target.name, target.health)
+		print '%s %s %s for %s points of damage!' % \
+			  (attacker.name, attackStats[-1], target.name, totalDMG)
+	else:
+		print '%s tries to hit %s, but misses.' % (attacker.name, target.name)
 
-	startTime = time()
-	delay = attackStats[1]
-	attackTime = startTime + delay
+def primary_time_delay_attack(attacker, target):
+	primary_attackTime = attacker.primDelay + attacker.primStats[1]
+	secondary_attackTime = attacker.secDelay + attacker.secStats[1]
+
 	while target.health > 0:
-		endTime = time()
-		if endTime >= attackTime:
+		primary_endTime = time()
+		secondary_endTime = time()
+
+		if primary_endTime >= primary_attackTime:
 			execute_attack(attacker, target, attacker.primStats)
-			time_delay_attack(attacker, target, attacker.primStats)
+			attacker.primDelay = time()
+			primary_time_delay_attack(attacker, target)
+
+		if attacker.EQUIPMENT_SLOTS['secondary']['type'] == '1h':
+			if secondary_endTime >= secondary_attackTime:
+				execute_attack(attacker, target, attacker.secStats)
+				attacker.secDelay = time()
+				primary_time_delay_attack(attacker, target)

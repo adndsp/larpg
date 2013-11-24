@@ -24,12 +24,20 @@ WEAPONS = {
                                         'hit_msg': 'slashes',
                                         'class': 'Admin'},
 
+	'Sword of Tuning':                  {'name': 'Sword of Tuning',
+                                        'type': '1h',
+                                        'damage': 40,
+                                        'delay': 30,
+                                        'effect': '',
+                                        'hit_msg': 'slashes',
+                                        'class': 'Admin'},
+
 # 1-Hand Blunt
 
-	'Stick of Tuning':                 {'name': 'Sword of Tuning',
+	'Club of Tuning':                  {'name': 'Club of Tuning',
                                         'type': '1h',
-                                        'damage': 8,
-                                        'delay': 60,
+                                        'damage': 40,
+                                        'delay': 20,
                                         'effect': '',
                                         'hit_msg': 'crushes',
                                         'class': 'Admin'},
